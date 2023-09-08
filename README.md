@@ -28,7 +28,7 @@ Link aplikasi adaptable : google.com
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan  tersebut kaitan antara urls.py, views.py, models.py, dan berkas HTML.
 
-    ![Client Request Chart](images\chart.jpg)
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/chart.jpg)
 
     Kaitan antara urls.py, views.py, models.py, dan berkas HTML:
     
