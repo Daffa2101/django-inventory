@@ -53,31 +53,55 @@ Link aplikasi adaptable : google.com
 MVC, MVT, dan MVVM merupakan kerangka / pola arsitektur software dalam pengembangan aplikasi untuk melakukan pemisahan antara logika bisnis, tampilan dan interaksi pengguna. Hal ini bertujuan untuk memudahkan pengembangan software serta mempermudah melakukan testing selama pengembangan software berlangsung.
 
 Perbedaan ketiganya adalah seperti berikut : 
+
 -> MVC (Model-View-Controller)
+
     flow / cara kerja arsitektur MVC:
+    
         1. user berinteraksi dengan view dengan melakukan suatu action.
+        
         2. action kemudian diteruskan ke Controller, pada Controller action tersebut diproses sesuai kebutuhan aplikasi.
+        
         3. Controller akan berinteraksi dengan Model untuk mengambil atau mengubah data pada Model.
+        
         4. Setelah berinteraksi dengan Model, Controller akan  mengupdate data yang akan ditampilkan dan mengirimkan ke View.
+        
         5. View menerima data dari Controller kemudian mengupdate tampilan interface.
 
-- MVT (Model-View-Template)
+-> MVT (Model-View-Template)
+  
     flow / cara kerja arsitektur MVT:
+  
         1. User mengakses salah satu suatu URL
+  
         2. Django akan menjadi pola URL yang sesuai pada urls.py dan menentukan View yang akan menerima request
+
         3. View menerima request dan melakukan logika bisnis yang diperlukan aplikasi
+  
         4. Jika View memerlukan dat dari database, View mengakses memlalui perantara Model.
+  
         5. Setelah proses pada databse oleh Model selesai, View akan menggunakan template (HTML) untuk melakukan render data tersebut ke tampilan yang dinginkan.
+  
         6. Setelah Template selesai mengatur tampilan, View akan akan menghasilkan page HTML yang sudah dirender beserta HTTP response yang sesuai.
+  
         7. HTTP Response berisi halaman HTML yang di request oleh user.
 
-- MVVM (Model-View-ViewModel)
+-> MVVM (Model-View-ViewModel)
+  
     flow / cara kerja arsitektur MVVM:
+  
         1. user berinteraksi dengan View dengan melakukan suatu action.
+        
         2. Action yang didapat oleh View diteruskan ke ViewModel
+        
         3. ViewModel mengelola logika bisnis aplikasi dan menjadi perantara antara View dan Model.
+        
         4.Jika butuh menggunakan database, Model akan yang akan berinteraksi dengan database.
+        
         5. Setelah data dari database didapatkan, Model meneruskan ke ViewModel.
+        
         6. ViewModel kemudian melakukan proses yang dibutuhkan aplikasi pada data yang didapat sebelum diteruskan kepada View.
+        
         7. Setelah data yang telah diproses diteruskan ke View, View akan merender tampilan sesuai yang dinginkan.
+        
         8. Setelah itu user dapat melihat tampilan yang telah diperbarui dan siap melakukan interaksi lainnya.
