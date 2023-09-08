@@ -33,19 +33,22 @@ Link aplikasi adaptable : google.com
     Kaitan antara urls.py, views.py, models.py, dan berkas HTML:
     
     -> urls.py berfungsi untuk mengarahkan Request client ke View yang dinginkan
+   
     -> models.py berfungsi sebagai perantara antara database dan View pada saat mengolah data dari database.
+   
     -> views.py melakukan logika bisnis dengan bantuan model dan template (HTML)
+   
     -> Berkas HTML menyediakan template sebagai tampilan untuk data yang didapat pada View
 
 
 
-3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+4. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
     Alasan kita menggunakan virtual environment adalah untuk mendapatkan fleksibilitas pada manajemen dependensi yang kita butuhkan. Dengan begitu kita dapat terhindar dari konflik versi dari package global pada pc kita.
 
     Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, akan tetapi akan memiliki kekurangan serta resiko akan hal hal yang disebutkan sebelumnnya.
 
-4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+5. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 
 MVC, MVT, dan MVVM merupakan kerangka / pola arsitektur software dalam pengembangan aplikasi untuk melakukan pemisahan antara logika bisnis, tampilan dan interaksi pengguna. Hal ini bertujuan untuk memudahkan pengembangan software serta mempermudah melakukan testing selama pengembangan software berlangsung.
 
