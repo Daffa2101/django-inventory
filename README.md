@@ -2,7 +2,7 @@
 
 #### TUGAS 2 #####
 
-Link aplikasi adaptable : google.com
+Link aplikasi adaptable : [Link Aplikasi Adaptable](https://django-inventory.adaptable.app/main/)
 
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
