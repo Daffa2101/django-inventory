@@ -47,27 +47,20 @@ Selanjutnya, saya mendaftarkan path-path dari fungsi-fungsi tersebut kedalam url
 5. Akses kelima URL (HTML,XML,JSON,XML by ID, JSON by ID)
 
 
+**HTML**
+    ![Postman HTML](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_HTML.jpg)
 
+**XML**
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_XML.jpg)
 
+**JSON**
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON.jpg)
 
+**XML by ID**
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_XML_by_ID.jpg)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**JSON by ID**
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON_by_ID.jpg)
 
 
 
