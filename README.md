@@ -60,7 +60,7 @@ Selanjutnya, saya mendaftarkan path-path dari fungsi-fungsi tersebut kedalam url
     ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_XML_by_ID.jpg)
 
 **JSON by ID**
-    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON_by_ID.jpg)
+    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON_by_id.jpg)
 
 
 
