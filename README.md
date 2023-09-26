@@ -18,13 +18,13 @@
 
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
-### Autentikasi
+-> Autentikasi
 Autentikasi madalah proses untuk memvalidasi identitas user dan biasanya dilakukan sebelum proses otorisasi. Autentikasi biasanya dilakukan pada fitur login untuk memvalidasi input, atau memvalidasi token akses user
 
-### Otorisasi
+-> Otorisasi
 Otorisasi adalah proses untuk menentukan izin pada suatu user yang telah diautentikasi untuk mengakses beberapa fitur didalam aplikasi. Contoh penggunaannya adalah ketika user berhasil login, tergantung role yang dimiliki user, tampilan yang akan ditampilkan/render juga akan berbeda.
 
-##M#engapa Keduanya Penting?
+-> Mengapa Keduanya Penting?
 Keduanya penting karena keduanya saling bekerja sama dalam meningkatkan kualitas aplikasi, keamanan aplikasi, dan pengalaman user.
 
 
@@ -32,7 +32,7 @@ Keduanya penting karena keduanya saling bekerja sama dalam meningkatkan kualitas
 
 Cookies adalah data kecil yang tersimpan pada perangkat user ketika user berinteraksi dengan aplikasi atau situs tersebut. Nantinya, Cookies yang tersimpan dapat diakses kembali oleh server web setelah user kembali mengakses aplikasi. Kegunaan cookies yang paling umum adalah untuk mengelola sesi user.
 
-###Cara django menggunakan cookies untuk mengelola data sesi pengguna :
+Cara django menggunakan cookies untuk mengelola data sesi pengguna :
 -> Saat pertama kali user mengakses aplikasi, Django akan membuatkan identifier yang unik untuk tiap user yang akan digunakan untuk sesi pengguna dan akan disimpan menjadi Cookies. Dalam aplikasi ini penggunaan cookies dilakukan dengan menyimpan cookies pada saat user melakukan login untuk menyimpan data waktu login. dan mengaksesnya menggunakan request.COOKIES[key].
 
 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
