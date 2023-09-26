@@ -98,3 +98,35 @@ def show_xml_by_id(request, id):
 def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+
+def update_amount(request, item_name, action):
+
+    try:
+        items = Item.objects.filter(name=item_name)
+    except items.DoesNotExist:
+        # Handle jika item tidak ditemukan
+        return redirect('main:show_main')
+
+    for item in items:
+        if action == 'increase':
+            item.amount += 1
+        elif action == 'decrease':
+            if item.amount > 0:
+                item.amount -= 1
+
+    item.save()
+
+    return redirect('main:show_main')
+
+
+def delete_item(request, item_name):
+    try:
+        item = Item.objects.filter(name=item_name)
+    except item.DoesNotExist:
+        # Handle jika item tidak ditemukan
+        return redirect('main:show_main')
+
+    item.delete()
+
+    return redirect('main:show_main')

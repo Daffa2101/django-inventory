@@ -1,7 +1,94 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
 
+
+
+    body, h1, h5, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #0099cc;
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+        color: #555;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #0099cc;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0099cc;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        background-color: #0099cc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0077aa;
+    }
+</style>
 <h1> Django Inventory </h1>
 
 <h5>Name: </h5>
@@ -12,6 +99,14 @@
 
 {% comment %} <h3> Kamu Menyimpan {{items|length}} item pada aplikasi ini </h3> {% endcomment %}
 <table border = "2" cellpadding = "10">
+    <colgroup>
+        <col style="width: 15%;"> <!-- Adjust the width as needed -->
+        <col style="width: 15%;"> <!-- Adjust the width as needed -->
+        <col style="width: 20%;"> <!-- Adjust the width as needed -->
+        <col style="width: 10%;"> <!-- Adjust the width as needed -->
+        <col style="width: 10%;">
+        <col style="width: 10%;"> <!-- Adjust the width as needed for buttons -->
+    </colgroup>
     <tr>
         <th>Name</th>
         <th>Amount</th>
@@ -27,6 +122,12 @@
             <td>{{item.amount}}</td>
             <td>{{item.description}}</td>
             <td>{{item.category}}</td>
+            <td>
+                <a href="{% url 'main:update_amount' item.name 'decrease' %}"><button >-</button></a>
+           
+                <a href="{% url 'main:update_amount' item.name 'increase' %}"><button >+</button></a>
+            </td>
+            <td><a href="{% url 'main:delete_item' item.name %}"><button>Delete</button></td><a/>
         </tr>
     {% endfor %}
 </table>
