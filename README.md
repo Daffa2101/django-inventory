@@ -1,5 +1,7 @@
 "# django-inventory" 
 
+Tugas 4 ada di branch development
+
 ### Tugas 3 ###
 
 1. Apa perbedaan antara form POST dan form GET dalam django ? 
