@@ -10,7 +10,7 @@
 <p>{{class}}</p>
 
 
-<h3> Kamu Menyimpan {{items|length}} item pada aplikasi ini </h3>
+{% comment %} <h3> Kamu Menyimpan {{items|length}} item pada aplikasi ini </h3> {% endcomment %}
 <table border = "2" cellpadding = "10">
     <tr>
         <th>Name</th>
@@ -38,5 +38,17 @@
         Add New Item
     </button>
 </a>
+
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
+
+
+<a href="{% url 'main:logout' %}">
+    <button>
+        Logout
+    </button>
+</a>
+
 
 {% endblock content %}  
