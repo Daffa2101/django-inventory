@@ -8,23 +8,28 @@
 -> Django UserCreationForm merupakan "template" formulir yang disediakan oleh Django. formulir ini dirancang khusus untuk memudahkan developer yang sedang mengembangkan aplikasi web, menambahkan fitur register didalam aplikasinya. formulir jenis ini biasanya digunakan bersama dengan modul modul django lainnya seperti Django authentication system untuk melakukan login dan register.
 
 -> Kelebihan dari Django UserCreationForm adalah:
+
     - dapat mempersingkat waktu developer dalam mengembangkan fitur yang dinginkannnya. 
+    
     - jika aplikasi web yang dibuat mengguakan Django, UserCreationForm sudah terintegrasi dengan baik dengan django(Django authentication). 
+    
     - UserCreationForm juga memiliki validasi bawaan untuk password seperti memastikan password yang dimasukkan kuat dan aman.
 
 -> Kekurangan dari Django UserCreationForm adalah:
+
     - Sedikit kaku dalam melakukan kostumisasi yang membutuhkan fitur yang kompleks
+    
     - Tampilan bawaannya terbatas sehingga perlu melakukan penambahan script untuk design manual
 
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
-###Autentikasi
+-> Autentikasi
 Autentikasi madalah proses untuk memvalidasi identitas user dan biasanya dilakukan sebelum proses otorisasi. Autentikasi biasanya dilakukan pada fitur login untuk memvalidasi input, atau memvalidasi token akses user
 
-###Otorisasi
+-> Otorisasi
 Otorisasi adalah proses untuk menentukan izin pada suatu user yang telah diautentikasi untuk mengakses beberapa fitur didalam aplikasi. Contoh penggunaannya adalah ketika user berhasil login, tergantung role yang dimiliki user, tampilan yang akan ditampilkan/render juga akan berbeda.
 
-##M#engapa Keduanya Penting?
+-> Mengapa Keduanya Penting?
 Keduanya penting karena keduanya saling bekerja sama dalam meningkatkan kualitas aplikasi, keamanan aplikasi, dan pengalaman user.
 
 
@@ -32,8 +37,10 @@ Keduanya penting karena keduanya saling bekerja sama dalam meningkatkan kualitas
 
 Cookies adalah data kecil yang tersimpan pada perangkat user ketika user berinteraksi dengan aplikasi atau situs tersebut. Nantinya, Cookies yang tersimpan dapat diakses kembali oleh server web setelah user kembali mengakses aplikasi. Kegunaan cookies yang paling umum adalah untuk mengelola sesi user.
 
-###Cara django menggunakan cookies untuk mengelola data sesi pengguna :
--> Saat pertama kali user mengakses aplikasi, Django akan membuatkan identifier yang unik untuk tiap user yang akan digunakan untuk sesi pengguna dan akan disimpan menjadi Cookies. Dalam aplikasi ini penggunaan cookies dilakukan dengan menyimpan cookies pada saat user melakukan login untuk menyimpan data waktu login. dan mengaksesnya menggunakan request.COOKIES[key].
+Cara django menggunakan cookies untuk mengelola data sesi pengguna :
+
+-> Saat pertama kali user mengakses aplikasi, Django akan membuatkan identifier yang unik untuk tiap user yang akan digunakan untuk sesi pengguna dan akan disimpan menjadi Cookies. Dalam aplikasi ini penggunaan cookies dilakukan dengan 
+menyimpan cookies pada saat user melakukan login untuk menyimpan data waktu login. dan mengaksesnya menggunakan request.COOKIES[key].
 
 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
 
@@ -52,24 +59,6 @@ untuk mengurangi resiko dan meningkatkan keamanan penggunaan protokol HTTPS dapa
     7. Melakukan migrasi model dan memasang default value untuk user pertama
     8. Menjalankan aplikasi
     9. Melakukan Register sebanyak 2x dan login dimasing-masing akun untuk menambahkan 3 data dummy melalui model yang baru dibuat 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
