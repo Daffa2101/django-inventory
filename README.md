@@ -18,10 +18,10 @@
 
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
-###Autentikasi
+### Autentikasi
 Autentikasi madalah proses untuk memvalidasi identitas user dan biasanya dilakukan sebelum proses otorisasi. Autentikasi biasanya dilakukan pada fitur login untuk memvalidasi input, atau memvalidasi token akses user
 
-###Otorisasi
+### Otorisasi
 Otorisasi adalah proses untuk menentukan izin pada suatu user yang telah diautentikasi untuk mengakses beberapa fitur didalam aplikasi. Contoh penggunaannya adalah ketika user berhasil login, tergantung role yang dimiliki user, tampilan yang akan ditampilkan/render juga akan berbeda.
 
 ##M#engapa Keduanya Penting?
@@ -52,24 +52,6 @@ untuk mengurangi resiko dan meningkatkan keamanan penggunaan protokol HTTPS dapa
     7. Melakukan migrasi model dan memasang default value untuk user pertama
     8. Menjalankan aplikasi
     9. Melakukan Register sebanyak 2x dan login dimasing-masing akun untuk menambahkan 3 data dummy melalui model yang baru dibuat 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
