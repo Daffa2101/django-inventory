@@ -14,12 +14,19 @@ Berguna untuk menambahkan properti css kepada seluruh elemen dengan class yang s
 ### 2. Jelaskan HTML5 Tag yang kamu ketahui.
 
 -> Berikut adalah beberapa HTML5 Tag yang saya ketahui dan pernah gunakan selama pengerjaan tugas PBP : 
+
     - <Form> = digunakan untuk membuat formulir yang membutuhkan pengiriman data ke server.
+    
     - <input> = digunakan untuk meminta input dari user
+    
     - <table>, <tr>, <td>, <th> = digunakan untuk membuat table , tr(baris), td(kolom), th(header)
+    
     - <div> = digunakan untuk mengelompokkan beberapa elemen/tag lainnnya
+    
     - <a> = digunakan untuk membuat hyperlink
-    - <button> = digunakan untuk membuat button yang dapat ditekan user
+    
+    - <button>= digunakan untuk membuat button yang dapat ditekan user
+
     - <header> = digunakan untuk mendefinisikan bagian head dari suatu halaman web (judul, logo, dll)
     
 Selain tag-tag diatas, masih sangat banyak tag-tag HTML5 lainnya,
