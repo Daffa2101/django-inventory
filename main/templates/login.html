@@ -5,9 +5,87 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    /* CSS untuk halaman Login */
+    .login {
+        width: 100%;
+        max-width: 400px; /* Sesuaikan dengan lebar yang Anda inginkan */
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
 
-<div class = "login">
+    h1 {
+        font-size: 24px;
+        color: #0099cc;
+        margin-bottom: 20px;
+    }
 
+    form {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .login_btn {
+        background-color: #0099cc;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .login_btn:hover {
+        background-color: #0077aa;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        color: red; /* Warna pesan error jika diperlukan */
+    }
+
+    a {
+        text-decoration: none;
+        color: #0099cc;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    body {
+        background-color: #9DB2BF;
+    }
+</style>
+
+<div class="login">
     <h1>Login</h1>
 
     <form method="POST" action="">
@@ -39,7 +117,6 @@
     {% endif %}     
         
     Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
 </div>
 
 {% endblock content %}
