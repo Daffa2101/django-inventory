@@ -113,6 +113,46 @@ Selanjutnya, saya mendaftarkan path-path dari fungsi-fungsi tersebut kedalam url
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### TUGAS 2 #####
 
 Link aplikasi adaptable : [Link Aplikasi Adaptable](https://django-inventory.adaptable.app/main/)
