@@ -9,6 +9,7 @@ from django.core import serializers
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import datetime
@@ -130,3 +131,43 @@ def delete_item(request, item_name):
     item.delete()
 
     return redirect('main:show_main')
+
+
+def get_item_json(request):
+    items = Item.objects.all().filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', items))
+
+
+@csrf_exempt
+def add_item_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        description = request.POST.get("description")
+        category = request.POST.get("category")
+        user = request.user
+
+        new_item = Item(name=name, amount=amount,
+                        description=description, category=category, user=user,)
+        new_item.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+
+
+@csrf_exempt
+def delete_item_ajax(request):
+
+    print(request.POST.get("name"))
+    if request.method == 'POST':
+        try:
+            item = Item.objects.all().filter(name=request.POST.get("name"))
+        except item.DoesNotExist:
+            # Handle jika item tidak ditemukan
+            return redirect('main:show_main')
+
+        item.delete()
+        return HttpResponse(b"DELETED", status=201)
+
+    return HttpResponseNotFound()
