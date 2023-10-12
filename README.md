@@ -1,6 +1,149 @@
-"# django-inventory" 
+# django-inventory
 
-Tugas 4 ada di branch development
+# ==== Tugas 5 ====
+
+### 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+-> Perbedaan dari asynchronous programming dengan synchronous programming adalah pada proses eksekusi dijalankan , synchronus programming menjalankan program secara berurutan sesuai baris kode dan dilakukan satu persatu, sedangkan pada asynchronous programming kode dieksekusi secara tidak berurutan , program tetap dapat melanjutkan eksekusi tugas lainnya sambil menunggu operasi yang membutuhkan waktu.
+
+### 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+-> contoh dari penerapan event-driven-programming pada tugas ini adalah pada saat user menekan tombol add item by ajax / delete fungsi addItem / deleteItem baru dijalankan. Selain itu untuk melakukan refresh product diperlukan trigger event seperti pemanggilan refreshProduct setelah melakukan addItem/deleteItem
+
+### 3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+-> penerapan asynchronous programming pada ajax dapat dilihat pada penggunaaan await, fetch(), then(), pada tiap keyword tersebut diterapkan asynchronus programing , seperti pada await maka program akan menunggu rangkaian kode yang di await selesai untuk melanjutkan programnya, dan untuk pada fetch() yang membuat permintaan ke server kita dapat menggunakan then() untuk menentukan function yang akan dipanggil setelah proses fetch selesai
+
+### 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+-> Fetch API tidak memerlukan developer untuk melakukan import library eksternal, sehingga membuat membuat Fetch API menjadi lebih ringan. Selain itu Fetch API menggunakan konsep Promises, dimana konsep tersebut memberikan kemudahan terahdap developer untuk menuliskan clean asynchronous code.
+
+-> jQuery memerlukan developer untuk melakukan import library agar bisa digunakan, ini membuat jQuery lebih berat dibandingkan Fetch API. Kelebihan dari jQuery adalah library ini menyediakan syntax syntax singkat untuk mempercepat proses pengembangan.
+
+Menurut saya teknologi yang lebih baik digunakan tergantung dengan kebutuhan developer. Dalam kasus PBP ini saya rasa lebih baik menggunakan Fetch API untuk melatih pemahaman dasar terlebih dahulu.
+
+### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    1. menambahkan fungsi add_item_ajax pada views dan menambahkannya kedalam urls.py
+    2. menambahkan fungsi delete_item_ajax pada view dan menambahkannya kedalam urls.py
+    3. pada main.html menambahkan scripts, yang berisi fungsi fungsi asynchronus seperti refresh_item, fungsi untuk menjalankan fungsi add_item_ajax dan delete_item_ajax pada views.py
+    4. melakukan perubahan innerHTML pada refresh itemtiap add/delete item, sehingga tidak perlu melakukan refresh page lagi
+    
+
+
+# ==== Tugas 5 ====
+
+### 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+-> Element selector 
+Berguna untuk menambahkan properti css kepada seluruh elemen dengan tag HTML yang sama. Tepat digunakan pada kasus sebuah tag membutuhkan design yang sama pada 1 halaman.
+-> ID Selector
+Berguna ketika ingin memberikan properti css secara spesifik kesalah satu elemen karena ID bersifat unik. Tepat digunakan untuk memberi desain secara spesifik kesalah satu elemen.
+-> Class Selector
+Berguna untuk menambahkan properti css kepada seluruh elemen dengan class yang sama. Tepat digunakan untuk memberikan desain ke suatu kelompok elemen yang ingin memiliki desain sama.
+
+### 2. Jelaskan HTML5 Tag yang kamu ketahui.
+
+-> Berikut adalah beberapa HTML5 Tag yang saya ketahui dan pernah gunakan selama pengerjaan tugas PBP : 
+
+    - <Form> = digunakan untuk membuat formulir yang membutuhkan pengiriman data ke server.
+    
+    - <input> = digunakan untuk meminta input dari user
+    
+    - <table>, <tr>, <td>, <th> = digunakan untuk membuat table , tr(baris), td(kolom), th(header)
+    
+    - <div> = digunakan untuk mengelompokkan beberapa elemen/tag lainnnya
+    
+    - <a> = digunakan untuk membuat hyperlink
+    
+    - <button>= digunakan untuk membuat button yang dapat ditekan user
+
+    - <header> = digunakan untuk mendefinisikan bagian head dari suatu halaman web (judul, logo, dll)
+    
+Selain tag-tag diatas, masih sangat banyak tag-tag HTML5 lainnya,
+
+### 3. Jelaskan perbedaan antara margin dan padding.
+
+-> Margin merupakan jarak yang dibuat pada luar elemen , Sedangkan Padding merupakan jarak yang dibuat didalam elemen, Margin berfungsi untuk menjaga jarak antar elemen sedangkan Padding berfungsi untuk mengatur jarak antara element parent dan childnya.
+
+### 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+-> Tailwind memiliki pendekatan utilit-first yang berarti memberikan utilitas yang dapat diterapkan kepada elemen HTML, sedangkan Bootstrap menggunakan pendekatan "siap pakai". 
+-> Karena pendekatan diatas , Tailwind memiliki ukuran file yang lebih kecil dibandingkan dengan bootstrap yang memiliki ukuran file yang lebih besar.
+-> Tailwind memiliki fleksibilitas yang lebih besar dalam hal memodifikasi kelas-kelasnya, sedangkan bootstrap memiliki fleksibilitas yang lebih rendah karena menyediakan komponen siap pakai.
+
+Dari perbedaan-perbedaan diatas kita dapat menyimpulkan bahwa Bootstrap cocok digunakan ketika membutuhkan pengembangan dalam jangka waktu yang cepat karena memiliki komponen siap pakai, sedangkan untuk Tailwind cocok digunakan dalam pengembangan yang membutuhkan banyak modifikasi desain, Selain itu dalam konteks kesulitan, bootstrap cocok digunakan untuk pemula , sedangkan untuk tailwind membutuhkan pehamaman yang lebih besar tentang bagaimana menggabungkan kelas-kelas yang tersedia untuk mencapai hal yang dinginkan.
+
+### 5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Karena saya menggunakan framework bootstrap, tidak terlalu banyak hal yang perlu saya lakukan untuk mengimplementasikan checklist diatas, berikut adalah hal yang saya lakukan:
+-> Membuat Navbar = Memilih komponen navbar yang tersedia pada bootsstrap dan mengubah elemen -elemennya sesuai keinginan
+-> Membuat Card = Menggunakan Card Deck dari Bootstrao untuk mengatur layout card card yang dibuat, dan melakukan looping sebanyak item untuk membuat card ( mengganti table )
+-> Menambahkan ebberapa properti css pada form page (login,register,create_item) seperti border, pading, size, color, dll
+
+
+# ==== Tugas 4 ====
+
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+
+-> Django UserCreationForm merupakan "template" formulir yang disediakan oleh Django. formulir ini dirancang khusus untuk memudahkan developer yang sedang mengembangkan aplikasi web, menambahkan fitur register didalam aplikasinya. formulir jenis ini biasanya digunakan bersama dengan modul modul django lainnya seperti Django authentication system untuk melakukan login dan register.
+
+-> Kelebihan dari Django UserCreationForm adalah:
+
+    - dapat mempersingkat waktu developer dalam mengembangkan fitur yang dinginkannnya. 
+    
+    - jika aplikasi web yang dibuat mengguakan Django, UserCreationForm sudah terintegrasi dengan baik dengan django(Django authentication). 
+    
+    - UserCreationForm juga memiliki validasi bawaan untuk password seperti memastikan password yang dimasukkan kuat dan aman.
+
+-> Kekurangan dari Django UserCreationForm adalah:
+
+    - Sedikit kaku dalam melakukan kostumisasi yang membutuhkan fitur yang kompleks
+    
+    - Tampilan bawaannya terbatas sehingga perlu melakukan penambahan script untuk design manual
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+-> Autentikasi
+Autentikasi madalah proses untuk memvalidasi identitas user dan biasanya dilakukan sebelum proses otorisasi. Autentikasi biasanya dilakukan pada fitur login untuk memvalidasi input, atau memvalidasi token akses user
+
+-> Otorisasi
+Otorisasi adalah proses untuk menentukan izin pada suatu user yang telah diautentikasi untuk mengakses beberapa fitur didalam aplikasi. Contoh penggunaannya adalah ketika user berhasil login, tergantung role yang dimiliki user, tampilan yang akan ditampilkan/render juga akan berbeda.
+
+-> Mengapa Keduanya Penting?
+Keduanya penting karena keduanya saling bekerja sama dalam meningkatkan kualitas aplikasi, keamanan aplikasi, dan pengalaman user.
+
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+Cookies adalah data kecil yang tersimpan pada perangkat user ketika user berinteraksi dengan aplikasi atau situs tersebut. Nantinya, Cookies yang tersimpan dapat diakses kembali oleh server web setelah user kembali mengakses aplikasi. Kegunaan cookies yang paling umum adalah untuk mengelola sesi user.
+
+Cara django menggunakan cookies untuk mengelola data sesi pengguna :
+
+-> Saat pertama kali user mengakses aplikasi, Django akan membuatkan identifier yang unik untuk tiap user yang akan digunakan untuk sesi pengguna dan akan disimpan menjadi Cookies. Dalam aplikasi ini penggunaan cookies dilakukan dengan 
+menyimpan cookies pada saat user melakukan login untuk menyimpan data waktu login. dan mengaksesnya menggunakan request.COOKIES[key].
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+secara defult, penggunaan cookies dalam pengembangan web merupakan pendekatan yang aman, akan tetapi tetap ada resiko potensial dari faktor-faktor eksternal yang perlu diwaspadai seperti serangan hacker yaitu Man in the middle atau Cross-Site Scripting XSS.
+
+untuk mengurangi resiko dan meningkatkan keamanan penggunaan protokol HTTPS dapat menjadi pertimbangan developer. Selain itu, Django memiliki fitur dalam melindungi script dari serangan Cross-Site Scripting atau XSS.
+
+5.Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    1. Membuat fungsi register menggunakan modul UserCreationForm
+    2. Membuat fungsi login menggunakan modul authentication, dan menyimpan data last login pada cookies ketika user berhasil login
+    3. Membuat fungsi logout menggunakan modul authentication, dan menghapus data last login pada cookies ketika user melakukan logout
+    4. Membuat template html untuk masing masing fungsi (kecuali logout)
+    5. Menampilkan data last login pada main.html dan menambahkan button logout
+    6. Menghubungkan Item dengan User menggunakan ForeignKey pada models.py
+    7. Melakukan migrasi model dan memasang default value untuk user pertama
+    8. Menjalankan aplikasi
+    9. Melakukan Register sebanyak 2x dan login dimasing-masing akun untuk menambahkan 3 data dummy melalui model yang baru dibuat 
+
+
+
+
 
 ### Tugas 3 ###
 
@@ -49,20 +192,27 @@ Selanjutnya, saya mendaftarkan path-path dari fungsi-fungsi tersebut kedalam url
 5. Akses kelima URL (HTML,XML,JSON,XML by ID, JSON by ID)
 
 
-**HTML**
-    ![Postman HTML](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_HTML.jpg)
 
-**XML**
-    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_XML.jpg)
 
-**JSON**
-    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON.jpg)
 
-**XML by ID**
-    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_XML_by_ID.jpg)
 
-**JSON by ID**
-    ![Client Request Chart](https://raw.githubusercontent.com/Daffa2101/django-inventory/main/images/postman_JSON_by_id.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

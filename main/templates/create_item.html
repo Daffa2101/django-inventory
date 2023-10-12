@@ -1,6 +1,60 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
+<style>
+    h1 {
+        font-size: 40px;
+        color: #0099cc;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #0099cc;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0077aa;
+    }
+</style>
+
 <h1>Add New Product</h1>
 
 <form method="POST">

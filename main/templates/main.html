@@ -1,42 +1,319 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1> Django Inventory </h1>
-
-<h5>Name: </h5>
-<p>{{name}}</p>
-<h5>Class: </h5>
-<p>{{class}}</p>
+{% comment %} <style>
 
 
-<h3> Kamu Menyimpan {{items|length}} item pada aplikasi ini </h3>
-<table border = "2" cellpadding = "10">
-    <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Description</th>
-        <th>Category</th>
-    </tr>
 
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    body, h1, h5, p {
+        margin: 0;
+        padding: 0;
+    }
 
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #0099cc;
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+        color: #555;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #0099cc;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0099cc;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        background-color: #0099cc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0077aa;
+    }
+</style>
+
+ {% endcomment %}
+<style>
+    .custom-card {
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-color: #526D82;
+        color: white; 
+    }
+
+    .custom-navbar {
+            background-color: #526D82; 
+            color: white; 
+        }
+
+        
+        .custom-dropdown {
+            background-color: #183D3D; 
+        }
+
+        
+        .custom-dropdown a {
+            color: white; 
+        }
+         .page-content-container {
+        padding: 20px; /* Tambahkan padding sesuai kebutuhan Anda */
+    }
+        body {
+        background-color: #9DB2BF;
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .btn-custom {
+        background-color: #0099cc;
+        color: white;
+    }
+    .btn-custom:hover {
+        background-color: #0077aa;
+    }
+
+    .navbar {
+    padding: 10px 20px;
+
+    label {
+        color: black;
+    }
+
+     img {
+        width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+</style>
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="#">Django Inventory</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Add New Item</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Service 1</a>
+                        <a class="dropdown-item" href="#">Service 2</a>
+                        <a class="dropdown-item" href="#">Service 3</a>
+                    </div>
+                </li>
+                 <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:logout' %}">
+                    Logout
+                </a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+        <h5 style="text-align: right;">Sesi terakhir login: {{ last_login }}</h5>
+
+
+<div  class="page-content-container">
+
+
+    <div  id="item_card_deck" class="card-deck" style="display: flex; flex-direction: row; flex-wrap: wrap;">
     {% for item in items %}
-        <tr>
-            <td>{{item.name}}</td>
-            <td>{{item.amount}}</td>
-            <td>{{item.description}}</td>
-            <td>{{item.category}}</td>
-        </tr>
+        
     {% endfor %}
-</table>
+    </div>
+
+
+
+
+
 
 <br />
 
 <a href="{% url 'main:create_item' %}">
-    <button>
-        Add New Item
-    </button>
-</a>
+        <button class="btn btn-custom">
+            Add New Item
+        </button>
+    </a>
+
+
+    <a href="{% url 'main:logout' %}">
+        <button class="btn btn-custom">
+            Logout
+        </button>
+        </a>
+
+        <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="col-form-label">Category:</label>
+                        <textarea class="form-control" id="category" name="category"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function getItems() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+    }
+
+    async function refreshItems() {
+        document.getElementById("item_card_deck").innerHTML = ""
+
+        const items = await getItems()
+        let htmlString = ""
+        items.forEach((item) => {
+            htmlString += `
+        \n<div class="card card-sm custom-card">
+            <div class="card-body">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Question_mark.png/475px-Question_mark.png" class="card-img-top" alt="Item Pics" style="width: 200px; height: 200px; margin: 10px;">
+                <h5 class="card-title">${item.fields.name}</h5>
+                <p class="card-text">Amount: ${item.fields.amount}</p>
+                <p class="card-text">Description: ${item.fields.description}</p>
+                <p class="card-text">Category: ${item.fields.category}</p>
+                <div class="d-flex justify-content-center">
+                    <a href="{ url 'main:update_amount' ${item.fields.name} 'decrease' }" class="btn btn-custom" style="margin-right: 10px;"><i class="fas fa-minus"></i></a>
+                    <button onclick="deleteItem(${item.fields.name})" id="delete_button" class="btn btn-custom" style="margin-right: 10px;"><i class="fas fa-trash"></i></button>
+                    <a href="{ url 'main:update_amount' ${item.fields.name} 'increase' }" class="btn btn-custom"><i class="fas fa-plus"></i></a>
+
+                </div>
+            </div>
+        </div>` 
+        })
+        
+        document.getElementById("item_card_deck").innerHTML = htmlString
+    }
+    
+    
+    function addItem() {
+        fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshItems)
+        
+        document.getElementById("form").reset()
+        return false
+    }
+
+     function deleteItem(user_name) {
+        fetch("{% url 'main:delete_item_ajax' %}", {
+            method: "POST",
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `name=${user_name}`
+        }).then(refreshItems)
+        
+        document.getElementById("delete_button").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addItem
+
+    refreshItems()
+</script>
+
 
 {% endblock content %}  
