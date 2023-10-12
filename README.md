@@ -1,6 +1,6 @@
 # django-inventory
 
-# ==== Tugas 5 ====
+# ==== Tugas 6 ====
 
 ### 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 
