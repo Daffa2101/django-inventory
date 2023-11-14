@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
 
 <style>
@@ -181,9 +183,9 @@
                             <p class="card-text">Description: ${item.fields.description}</p>
                             <p class="card-text">Category: ${item.fields.category}</p>
                             <div class="d-flex justify-content-center">
-                                <a href="{ url 'main:update_amount' ${item.fields.name} 'decrease' }" class="btn btn-custom" style="margin-right: 10px;"><i class="fas fa-minus"></i></a>
+                                <a href="{ url 'update_amount' '${item.fields.name}' 'decrease' }" class="btn btn-custom" style="margin-right: 10px;"><i class="fas fa-minus"></i></a>
                                 <button onclick="deleteItem('${item.fields.name}')" id="delete_button" class="btn btn-custom" style="margin-right: 10px;"><i class="fas fa-trash"></i></button>
-                                <a href="{ url 'main:update_amount' ${item.fields.name} 'increase' }" class="btn btn-custom"><i class="fas fa-plus"></i></a>
+                                <a href="{ url 'main:update_amount' '${item.fields.name}' 'increase' }" class="btn btn-custom"><i class="fas fa-plus"></i></a>
 
                             </div>
                         </div>
